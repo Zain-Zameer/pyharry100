@@ -123,10 +123,15 @@ def downloadDay(day):
                 
         
         
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("command",help="for example:'Day6' or 'status' or 'test' ")
+    args = parser.parse_args()
+    if args.command:
+        downloadDay(args.command)
+    else:
+        print("Invalid command. Use 'pyharry100 day1' or 'pyharry100 status' or 'pyharry100 test'.")
+    
 
-parser = argparse.ArgumentParser()
-
-parser.add_argument("command",help="for example:'Day6' or 'status' or 'test' ")
-
-args = parser.parse_args()
-downloadDay(args.command)
+if __name__ == "__main__":
+    main()
